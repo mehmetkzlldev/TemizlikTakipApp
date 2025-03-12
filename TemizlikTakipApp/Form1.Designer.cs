@@ -51,6 +51,7 @@
             cbSinif.Name = "cbSinif";
             cbSinif.Size = new Size(355, 23);
             cbSinif.TabIndex = 0;
+            cbSinif.SelectedValueChanged += cbSinif_SelectedValueChanged_1;
             // 
             // lbOgrencıler
             // 

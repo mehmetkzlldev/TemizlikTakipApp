@@ -68,7 +68,8 @@ namespace TemizlikTakipApp
             lbOgrencıler.DataSource = liste;
         }
 
-        private void cbSinif_SelectedValueChanged(object sender, EventArgs e)
+
+        private void cbSinif_SelectedValueChanged_1(object sender, EventArgs e)
         {
             Filtrele();
         }
