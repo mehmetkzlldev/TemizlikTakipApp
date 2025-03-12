@@ -36,7 +36,7 @@
             // btnKaydet
             // 
             btnKaydet.BackColor = Color.FromArgb(128, 255, 128);
-            btnKaydet.Location = new Point(109, 58);
+            btnKaydet.Location = new Point(109, 60);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(148, 28);
             btnKaydet.TabIndex = 0;
