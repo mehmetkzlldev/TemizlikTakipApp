@@ -11,27 +11,29 @@ using TemizlikNobetiApp;
 
 namespace TemizlikTakipApp
 {
-    public partial class FrmYeniSınıf : Form
+    public partial class FrmYeniOgrenci : Form
     {
-        public FrmYeniSınıf()
+        public FrmYeniOgrenci()
         {
             InitializeComponent();
+            cbSinif.DisplayMember = "Ad";
+            cbSinif.ValueMember = "Id";//SelectedValue kullanabilmek için
+            cbSinif.DataSource = KayitYoneticisi.Siniflar;
         }
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            Sinif yeni = new();
-
+            Ogrenci yeni = new();
             yeni.Id = Guid.NewGuid().ToString();
+            yeni.Ad = txtAd.Text;
+            yeni.Soyad = txtSoyad.Text;
+            yeni.Numara = Convert.ToInt32(mtxtNumara.Text);
 
-            yeni.Ad = txtSinifAd.Text;
+            yeni.SinifId = cbSinif.SelectedValue.ToString();
 
-            KayitYoneticisi.Siniflar.Add(yeni);
-
+            KayitYoneticisi.Ogrenciler.Add(yeni);
             KayitYoneticisi.Kaydet();
             DialogResult = DialogResult.OK;
-
         }
     }
 }
-
-

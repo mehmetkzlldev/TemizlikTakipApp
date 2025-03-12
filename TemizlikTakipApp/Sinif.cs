@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemizlikTakipApp
+namespace TemizlikNobetiApp
 {
     public class Sinif
     {
-        public string Ad { get; set; }
         public string Id { get; set; }
+        public string Ad { get; set; }
     }
 }

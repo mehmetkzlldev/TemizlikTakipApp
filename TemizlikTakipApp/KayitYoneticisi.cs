@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using TemizlikTakipApp;
 
-namespace TemizlikTakipApp
+namespace TemizlikNobetiApp
 {
     //Bu Sınıf Tüm kayıt işlemlerinden
     //ve verinin diğer formlar ile 
@@ -30,7 +30,7 @@ namespace TemizlikTakipApp
         }
         public static void Yukle()
         {
-            
+            //Yükleme işlemleri
             if (File.Exists("siniflar.txt"))
             {
                 string metin = File.ReadAllText("siniflar.txt");
@@ -40,10 +40,11 @@ namespace TemizlikTakipApp
             }
             else
             {
-                
+                //Boş liste olarak oluştur
                 Siniflar = new BindingList<Sinif>();
             }
-            
+            /////
+            //Yükleme işlemleri
             if (File.Exists("ogrenciler.txt"))
             {
                 string metin = File.ReadAllText("ogrenciler.txt");
@@ -53,7 +54,7 @@ namespace TemizlikTakipApp
             }
             else
             {
-               
+                //Boş liste olarak oluştur
                 Ogrenciler = new BindingList<Ogrenci>();
             }
         }

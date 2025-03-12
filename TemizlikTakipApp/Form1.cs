@@ -1,4 +1,5 @@
-﻿using TemizlikTakipApp;
+﻿using TemizlikNobetiApp;
+using TemizlikTakipApp;
 
 namespace TemizlikTakipApp
 {
@@ -8,7 +9,7 @@ namespace TemizlikTakipApp
         {
             InitializeComponent();
 
-            //Ýlk açýlýþta verileri yükle 
+
             KayitYoneticisi.Yukle();
 
             cbSinif.DisplayMember = "Ad";
@@ -29,35 +30,36 @@ namespace TemizlikTakipApp
 
             if (cevap == DialogResult.OK)
             {
-                MessageBox.Show("Yeni Sýnýf kayýt edildi.");
+                MessageBox.Show("Yeni sınıf kaydedildi.");
             }
         }
 
         private void btnYeniOgrenci_Click(object sender, EventArgs e)
         {
-            FrmYeniSınıf form = new();
+            FrmYeniOgrenci form = new();
             var cevap = form.ShowDialog();
 
             if (cevap == DialogResult.OK)
             {
                 Filtrele();
             }
+
+
         }
 
         private void Filtrele()
         {
             if (cbSinif.SelectedValue == null)
             {
-                //Sýnýf seçili deðilse
+
                 lbOgrencıler.DataSource = null;
                 return;
             }
 
-            //Sýnýf seçili
+
             string sinifId = cbSinif.SelectedValue.ToString();
 
-            //LINQ ile sorgulama
-            //Lambda x => x.....
+
             var liste = KayitYoneticisi.
                 Ogrenciler.Where(x => x.SinifId == sinifId).ToList();
 

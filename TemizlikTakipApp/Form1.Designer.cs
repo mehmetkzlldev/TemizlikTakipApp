@@ -31,14 +31,14 @@
             cbSinif = new ComboBox();
             lbOgrencıler = new ListBox();
             panel1 = new Panel();
+            btnYeniOgrencı = new Button();
             btnYeniSinif = new Button();
-            btnYeniOgrenci = new Button();
             btnOnayla = new Button();
             label1 = new Label();
             btnAta = new Button();
             btnCıkar = new Button();
             panel4 = new Panel();
-            textBox2 = new TextBox();
+            lbSeçilenOgrenciler = new ListBox();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             SuspendLayout();
@@ -64,8 +64,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnYeniOgrencı);
             panel1.Controls.Add(btnYeniSinif);
-            panel1.Controls.Add(btnYeniOgrenci);
             panel1.Controls.Add(cbSinif);
             panel1.Controls.Add(lbOgrencıler);
             panel1.Location = new Point(465, 12);
@@ -73,28 +73,29 @@
             panel1.Size = new Size(361, 420);
             panel1.TabIndex = 2;
             // 
+            // btnYeniOgrencı
+            // 
+            btnYeniOgrencı.BackColor = Color.FromArgb(255, 128, 0);
+            btnYeniOgrencı.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnYeniOgrencı.Location = new Point(188, 362);
+            btnYeniOgrencı.Name = "btnYeniOgrencı";
+            btnYeniOgrencı.Size = new Size(173, 26);
+            btnYeniOgrencı.TabIndex = 3;
+            btnYeniOgrencı.Text = "Yeni Ogrenci  Ekle";
+            btnYeniOgrencı.UseVisualStyleBackColor = false;
+            btnYeniOgrencı.Click += btnYeniOgrenci_Click;
+            // 
             // btnYeniSinif
             // 
             btnYeniSinif.BackColor = Color.FromArgb(255, 128, 0);
             btnYeniSinif.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnYeniSinif.Location = new Point(188, 362);
+            btnYeniSinif.Location = new Point(3, 362);
             btnYeniSinif.Name = "btnYeniSinif";
             btnYeniSinif.Size = new Size(173, 26);
             btnYeniSinif.TabIndex = 3;
-            btnYeniSinif.Text = "Yeni Sınıf  Ekle";
+            btnYeniSinif.Text = "Yeni Sınıf Ekle";
             btnYeniSinif.UseVisualStyleBackColor = false;
-            // 
-            // btnYeniOgrenci
-            // 
-            btnYeniOgrenci.BackColor = Color.FromArgb(255, 128, 0);
-            btnYeniOgrenci.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnYeniOgrenci.Location = new Point(3, 362);
-            btnYeniOgrenci.Name = "btnYeniOgrenci";
-            btnYeniOgrenci.Size = new Size(173, 26);
-            btnYeniOgrenci.TabIndex = 3;
-            btnYeniOgrenci.Text = "Yeni Öğrenci Ekle";
-            btnYeniOgrenci.UseVisualStyleBackColor = false;
-            btnYeniOgrenci.Click += btnYeniOgrenci_Click;
+            btnYeniSinif.Click += btnYeniSinif_Click;
             // 
             // btnOnayla
             // 
@@ -148,24 +149,24 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(lbSeçilenOgrenciler);
             panel4.Controls.Add(btnOnayla);
             panel4.Controls.Add(btnCıkar);
             panel4.Controls.Add(btnAta);
-            panel4.Controls.Add(textBox2);
             panel4.Controls.Add(label1);
             panel4.Location = new Point(12, 12);
             panel4.Name = "panel4";
             panel4.Size = new Size(447, 420);
             panel4.TabIndex = 4;
             // 
-            // textBox2
+            // lbSeçilenOgrenciler
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.Location = new Point(12, 50);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(422, 264);
-            textBox2.TabIndex = 2;
+            lbSeçilenOgrenciler.FormattingEnabled = true;
+            lbSeçilenOgrenciler.ItemHeight = 15;
+            lbSeçilenOgrenciler.Location = new Point(34, 33);
+            lbSeçilenOgrenciler.Name = "lbSeçilenOgrenciler";
+            lbSeçilenOgrenciler.Size = new Size(383, 274);
+            lbSeçilenOgrenciler.TabIndex = 4;
             // 
             // Form1
             // 
@@ -180,7 +181,6 @@
             Text = "Temizlik Takip App";
             panel1.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -189,13 +189,13 @@
         private ComboBox cbSinif;
         private ListBox lbOgrencıler;
         private Panel panel1;
-        private Button btnYeniOgrenci;
+        private Button btnYeniSinif;
         private Button btnAta;
         private Button btnCıkar;
         private Label label1;
         private Button btnOnayla;
-        private Button btnYeniSinif;
+        private Button btnYeniOgrencı;
         private Panel panel4;
-        private TextBox textBox2;
+        private ListBox lbSeçilenOgrenciler;
     }
 }
