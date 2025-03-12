@@ -16,6 +16,8 @@ namespace TemizlikNobetiApp
     {
         public static BindingList<Sinif> Siniflar { get; set; }
         public static BindingList<Ogrenci> Ogrenciler { get; set; }
+        public static BindingList<Ogrenci> TemizlikKayitlari { get; set; }
+
 
         public static void Kaydet()
         {
@@ -27,6 +29,10 @@ namespace TemizlikNobetiApp
             string metin2 = JsonSerializer.Serialize(Ogrenciler);
 
             File.WriteAllText("ogrenciler.txt", metin2);
+
+            string metin3 = JsonSerializer.Serialize(TemizlikKayitlari);
+
+            File.WriteAllText
         }
         public static void Yukle()
         {
